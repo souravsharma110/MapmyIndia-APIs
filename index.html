@@ -76,7 +76,7 @@
 
             // call geocoding api
             function geocoding(){
-                jsonp('http://devatlas.mapmyindia.in/api/places/geocode/v3.7.0?address=mapmyindia 237 okhla phase 3&access_token='+token, function(data) {
+                jsonp('https://devatlas.mapmyindia.in/api/places/geocode/v3.7.0?address=mapmyindia 237 okhla phase 3&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
