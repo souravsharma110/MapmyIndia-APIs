@@ -146,7 +146,7 @@
 		
             // call Many_to_Many_distance_matrix api
             function Many_to_Many_distance_matrix(){
-                jsonp('https://apis.mapmyindia.com/advancedmaps/v1/'+token+'/distance_matrix/driving/77.983936,28.255904;77.05993,28.487555;77.15993,28.587555;77.264997,28.554534?sources=0;1&destinations=2;3', function(data) {
+                jsonp('https://apis.mapmyindia.com/advancedmaps/v1/YTQ3MzIyMGUtMTJlMC00Yjg4LWE5ZDgtMGMyZDUxMWM2YWFm/distance_matrix/driving/77.983936,28.255904;77.05993,28.487555;77.15993,28.587555;77.264997,28.554534?sources=0;1&destinations=2;3', function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
