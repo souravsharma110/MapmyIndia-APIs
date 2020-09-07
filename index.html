@@ -12,22 +12,21 @@
     </head>
     <body onload="Auth_token_generate();">
         <div id="map"></div><br>
-        <button onclick="autosuggest();">Autosuggest</button>
+        <button onclick="autosuggest();">autosuggest</button>
 	<button onclick="autosuggest_pre();">Autosuggest Pre Prod</button>
-	<button onclick="text_search();">Text Search</button>
+	<button onclick="text_search();">Text_Search</button>
 	<button onclick="eLoc();">eLoc</button>
         <button onclick="geocoding();">geocoding</button>
 	<button onclick="nearby();">nearby</button>
-        <button onclick="rev_geocode();">rev geocode</button>
-	<button onclick="route_adv();">route adv</button>
-	<button onclick="route_eta();">route eta</button>
-	<button onclick="route_traffic();">route traffic</button>
-        <button onclick="Many_to_Many_distance_matrix();">Many to Many distance matrix</button>
-        <button onclick="distance_matrix();">distance matrix</button>
-	<button onclick="distance_matrix_eta();">distance matrix eta</button>
-	<button onclick="distance_matrix_traffic();">distance matrix traffic</button>
-        <button onclick="woodpecker();">Address Standardization API</button>
-	<button onclick="building_api();">Building Between Locations API</button>
+        <button onclick="rev_geocode();">rev_geocode</button>
+	<button onclick="route_adv();">route_adv</button>
+	<button onclick="route_eta();">route_eta</button>
+	<button onclick="route_traffic();">route_traffic</button>
+        <button onclick="Many_to_Many_distance_matrix();">Many_to_Many_distance_matrix</button>
+        <button onclick="distance_matrix();">distance_matrix</button>
+	<button onclick="distance_matrix_eta();">distance_matrix_eta</button>
+	<button onclick="distance_matrix_traffic();">distance_matrix_traffic</button>
+        <button onclick="woodpecker();">Address_Standardization_API</button>
         
         <!-- // logic -->
         <script>
@@ -189,13 +188,6 @@
             // Address Standardization API
             function woodpecker(){
                 jsonp('https://atlas.mapmyindia.com/api/places/woodpecker?address=mapmyindia 237 okhla phase 3&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
-	    // Building Between Locations API
-            function building_api(){
-                jsonp('https://app.mapmyindia.com/BuildingAPI/buildingname/getBuildingsBetweenLocations?X=28.449089000000000,77.058927000000000&Y=28.59969856049778,77.22728400878896&key=q98jcbojgd1p5a1ft5ced5329vad1j33, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
