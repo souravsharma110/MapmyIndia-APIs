@@ -119,7 +119,7 @@
 
             // call geocoding pre prod api
             function geocoding_pre(){
-                jsonp('http://devatlas.mapmyindia.in/api/places/geocode/v3.7.2?address=P-19, GREEN PARK EXTENSION, NEW DELHI,110016,DELHI&access_token='+token, function(data) {
+                jsonp('https://devatlas.mapmyindia.in/api/places/geocode/v3.7.2?address=P-19, GREEN PARK EXTENSION, NEW DELHI,110016,DELHI&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
