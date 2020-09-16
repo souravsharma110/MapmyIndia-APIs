@@ -17,7 +17,9 @@
 	<button onclick="text_search();">Text_Search</button>
 	<button onclick="eLoc();">eLoc</button>
         <button onclick="geocoding();">geocoding</button>
+	<button onclick="geocoding_pre();">geocoding pre prod</button>
 	<button onclick="nearby();">nearby</button>
+	<button onclick="nearby_pre();">nearby pre prod</button>
         <button onclick="rev_geocode();">rev_geocode</button>
 	<button onclick="route_adv();">route_adv</button>
 	<button onclick="route_eta();">route_eta</button>
@@ -85,7 +87,7 @@
 	
 	    // call autosuggest Pre Prod api
             function autosuggest_pre(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=hotels in palam colony&location=28.558460919432065,77.27203937290443&access_token='+token, function(data) {
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=mapmyindia&location=28.5507160000001,77.2689280000001&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
@@ -114,10 +116,26 @@
                     alert(JSON.stringify(data));
                 });
             }
+
+            // call geocoding pre prod api
+            function geocoding_pre(){
+                jsonp('http://devatlas.mapmyindia.in/api/places/geocode/v3.7.2?address=P-19, GREEN PARK EXTENSION, NEW DELHI,110016,DELHI&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }
 	    
 	    // call nearby api
             function nearby(){
                 jsonp('https://atlas.mapmyindia.com/api/places/nearby/json?keywords=RCNAUS&refLocation=28.550759,77.268937&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }
+	    
+            // call nearby pre prod api
+            function nearby_pre(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/nearby/json?refLocation=28.558460919432065,77.27203937290443&keywords=coffee&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
