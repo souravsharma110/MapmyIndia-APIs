@@ -14,6 +14,7 @@
         <div id="map"></div><br>
         <button onclick="autosuggest();">autosuggest</button>
 	<button onclick="autosuggest_pre();">Autosuggest Pre Prod</button>
+	<button onclick="covid_layer_api();">Covid Layers API</button>
 	<button onclick="text_search();">Text_Search</button>
 	<button onclick="eLoc();">eLoc</button>
         <button onclick="geocoding();">geocoding</button>
@@ -88,6 +89,14 @@
 	    // call autosuggest Pre Prod api
             function autosuggest_pre(){
                 jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=mapmyindia&location=28.5507160000001,77.2689280000001&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }
+	
+	    // call Covid Layer api
+            function covid_layer_api(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v1.0.2/places/layers/json?keywords=HSPTMT;HSPCOV;HSPTST;HSPSCC;HSPTMT;FODHNG;HOTNST;CLIFVR;TMPRSN&eLoc=MMI000&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
