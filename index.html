@@ -13,7 +13,7 @@
         </style>
     </head>
     <body onload="Auth_token_generate();">
-        <div id="mapid" style="width: 80%; height: 80vh;"></div>
+        <div id="mapid" style="width: 90%; height: 90vh;"></div>
         <button onclick="autosuggest();">autosuggest</button>
 	<button onclick="autosuggest_pre();">Autosuggest Pre Prod</button>
 	<button onclick="mgis_covid_stats();">mgis covid stats</button>
@@ -38,7 +38,7 @@
         <script>
 
         var map = L.map('mapid').setView([28.505, 77.09], 13);
-	var mmTile= new MapmyIndia.tiles().addTo(map);
+	var mmTile= new MapmyIndia.tiles();
             var token;
             function jsonp(url, callback) {
                 const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
