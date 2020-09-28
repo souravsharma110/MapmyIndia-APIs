@@ -37,8 +37,11 @@
         <!-- // logic -->
         <script>
 
-        var map = L.map('mapid').setView([28.505, 77.09], 13);
-	var mmTile= new MapmyIndia.tiles();
+        map = new MapmyIndia.Map('map', {
+                    center: [28.61, 77.23],
+                    zoom: 9,
+                    zoomControl: true,
+                });
             var token;
             function jsonp(url, callback) {
                 const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
