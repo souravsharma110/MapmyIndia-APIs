@@ -99,7 +99,7 @@
 		
 	    // call mGIS Covid Stats api
             function mgis_covid_stats(){
-                jsonp('https://mgis.mapmyindia.in/getCovidStats?admin=district&access_token='+token, function(data) {
+                jsonp('https://mgis-api.mapmyindia.com/getCovidStats?admin=district&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
