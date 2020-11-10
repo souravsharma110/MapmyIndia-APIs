@@ -2,28 +2,21 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" ></script>
-        <script src="https://apis.mapmyindia.com/advancedmaps/v1/YTQ3MzIyMGUtMTJlMC00Yjg4LWE5ZDgtMGMyZDUxMWM2YWFm/map_load?v=1.5&vectorLayer"></script>
+        <script src="https://apis.mapmyindia.com/advancedmaps/v1/YTQ3MzIyMGUtMTJlMC00Yjg4LWE5ZDgtMGMyZDUxMWM2YWFm/map_load?v=1.5"></script>
         <style>
             #map{
-                height: 80vh;
-                width: 80%;
+                height: 90vh;
+                width: 100%;
             }    
         </style>
     </head>
     <body onload="Auth_token_generate();">
-        <div id="mapid" style="width: 90%; height: 90vh;"></div>
+        <div id="map"></div><br>
         <button onclick="autosuggest();">autosuggest</button>
-	<button onclick="autosuggest_pre();">Autosuggest Pre Prod</button>
-	<button onclick="mgis_covid_stats();">mgis covid stats</button>
-	<button onclick="covid_layer_api();">Covid Layers API</button>
 	<button onclick="text_search();">Text_Search</button>
 	<button onclick="eLoc();">eLoc</button>
         <button onclick="geocoding();">geocoding</button>
-	<button onclick="geocoding_pre();">geocoding pre prod</button>
 	<button onclick="nearby();">nearby</button>
-	<button onclick="nearby_pre();">nearby pre prod</button>
         <button onclick="rev_geocode();">rev_geocode</button>
 	<button onclick="route_adv();">route_adv</button>
 	<button onclick="route_eta();">route_eta</button>
@@ -37,11 +30,11 @@
         <!-- // logic -->
         <script>
 
-        map = new MapmyIndia.Map('mapid', {
-                    center: [28.61, 77.23],
-                    zoom: 9,
-                    zoomControl: true,
-                });
+        var map = new MapmyIndia.Map('map',
+        {
+            center: [28.04, 78.2],
+            zoom: 12
+        });
             var token;
             function jsonp(url, callback) {
                 const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
@@ -88,30 +81,6 @@
                     alert(JSON.stringify(data));
                 });
             }
-	
-	    // call autosuggest Pre Prod api
-            function autosuggest_pre(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=mapmyindia&location=28.5507160000001,77.2689280000001&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
-		
-	    // call mGIS Covid Stats api
-            function mgis_covid_stats(){
-                jsonp('https://mgis-api.mapmyindia.com/getCovidStats?admin=district&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
-	
-	    // call Covid Layer api
-            function covid_layer_api(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v1.0.2/places/layers/json?keywords=HSPTMT;HSPCOV;HSPTST;HSPSCC;HSPTMT;FODHNG;HOTNST;CLIFVR;TMPRSN&eLoc=MMI000&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
 	    
 	    // call text_search api
             function text_search(){
@@ -136,26 +105,10 @@
                     alert(JSON.stringify(data));
                 });
             }
-
-            // call geocoding pre prod api
-            function geocoding_pre(){
-                jsonp('https://devatlas.mapmyindia.in/api/places/geocode/v3.7.2?address=P-19, GREEN PARK EXTENSION, NEW DELHI,110016,DELHI&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
 	    
 	    // call nearby api
             function nearby(){
                 jsonp('https://atlas.mapmyindia.com/api/places/nearby/json?keywords=RCNAUS&refLocation=28.550759,77.268937&access_token='+token, function(data) {
-                    console.log(data);
-                    alert(JSON.stringify(data));
-                });
-            }
-	    
-            // call nearby pre prod api
-            function nearby_pre(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/nearby/json?refLocation=28.558460919432065,77.27203937290443&keywords=coffee&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
