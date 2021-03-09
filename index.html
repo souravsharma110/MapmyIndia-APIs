@@ -13,6 +13,7 @@
     <body onload="Auth_token_generate();">
         <div id="map"></div><br>
         <button onclick="auto();">autosuggest</button>
+        <button onclick="autosuggest_pre_prod();">autosuggest_pre_prod</button>
         <button onclick="geocoding();">geocoding</button>
         <button onclick="rev_geocode();">rev_geocode</button>
         <button onclick="Many_to_Many_distance_matrix();">Many_to_Many_distance_matrix</button>
@@ -72,7 +73,13 @@
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
-            }   
+            }   // call autosuggest pre prod api
+            function autosuggest_pre_prod(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }  
 
             // call geocoding api
             function geocoding(){
