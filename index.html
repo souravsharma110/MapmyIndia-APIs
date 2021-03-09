@@ -13,6 +13,7 @@
     <body onload="Auth_token_generate();">
         <div id="map"></div><br>
         <button onclick="autosuggest();">autosuggest</button>
+        <button onclick="autosuggest_pre_prod();">autosuggest_pre_prod</button>
 	<button onclick="text_search();">Text_Search</button>
 	<button onclick="eLoc();">eLoc</button>
         <button onclick="geocoding();">geocoding</button>
@@ -77,6 +78,13 @@
             // call autosuggest api
             function autosuggest(){
                 jsonp('https://atlas.mapmyindia.com/api/places/search/json?query=delhi&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }
+            // call autosuggest pre prod api
+            function autosuggest_pre_prod(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
