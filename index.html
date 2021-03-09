@@ -77,14 +77,14 @@
 
             // call autosuggest api
             function autosuggest(){
-                jsonp('https://atlas.mapmyindia.com/api/places/search/json?query=delhi&access_token='+token, function(data) {
+                jsonp('https://atlas.mapmyindia.com/api/places/search/json?query=delhi&access_token=7b504f00-14a5-42bb-b3a1-7064f40ec45b, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
             }
             // call autosuggest pre prod api
             function autosuggest_pre_prod(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token='+token, function(data) {
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token=7b504f00-14a5-42bb-b3a1-7064f40ec45b, function(data) {
                     console.log(token);
                     alert(JSON.stringify(data));
                 });
