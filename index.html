@@ -85,7 +85,7 @@
             // call autosuggest pre prod api
             function autosuggest_pre_prod(){
                 jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token='+token, function(data) {
-                    console.log(data);
+                    console.log(token);
                     alert(JSON.stringify(data));
                 });
             }
