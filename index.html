@@ -14,6 +14,8 @@
         <div id="map"></div><br>
         <button onclick="auto();">autosuggest</button>
         <button onclick="autosuggest_pre_prod();">autosuggest_pre_prod</button>
+        <button onclick="textsearch_pre_prod();">textsearch_pre_prod</button>
+        <button onclick="nearby_pre_prod();">nearby_pre_prod</button>
         <button onclick="geocoding();">geocoding</button>
         <button onclick="rev_geocode();">rev_geocode</button>
         <button onclick="Many_to_Many_distance_matrix();">Many_to_Many_distance_matrix</button>
@@ -79,7 +81,19 @@
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
-            }  
+            }     // call textsearch pre prod api
+            function textsearch_pre_prod(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/textsearch/json?query=delhi&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }   // call nearby pre prod api
+            function nearby_pre_prod(){
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/nearby/json?query=coffee&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }
 
             // call geocoding api
             function geocoding(){
