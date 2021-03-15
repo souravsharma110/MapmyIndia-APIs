@@ -89,7 +89,7 @@
                 });
             }   // call nearby pre prod api
             function nearby_pre_prod(){
-                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/nearby/json?query=FODCOF&access_token='+token, function(data) {
+                jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/nearby/json?keywords=FODCOF&refLocation=28.550759,77.268937&access_token='+token, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
