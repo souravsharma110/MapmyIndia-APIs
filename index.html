@@ -14,6 +14,7 @@
         <div id="map"></div><br>
         <button onclick="auto();">autosuggest</button>
         <button onclick="autosuggest_pre_prod();">autosuggest_pre_prod</button>
+        <button onclick="isopolygon_pre_prod();">isopolygon_pre_prod</button>
         <button onclick="textsearch_pre_prod();">textsearch_pre_prod</button>
         <button onclick="nearby_pre_prod();">nearby_pre_prod</button>
         <button onclick="geocoding();">geocoding</button>
@@ -78,6 +79,12 @@
             }   // call autosuggest pre prod api
             function autosuggest_pre_prod(){
                 jsonp('https://atlasweb.mapmyindia.in/api/v4.4/places/search/json?query=coffee&access_token='+token, function(data) {
+                    console.log(data);
+                    alert(JSON.stringify(data));
+                });
+            }   // call isopolygon pre prod api
+            function isopolygon_pre_prod(){
+                jsonp('https://am.mapmyindia.in/advancedmaps/v2/isopolygon?locations=28.613459424004414,76.99218750000001&costing=auto&rangeType=time&contours=17,000000&speedTypes=predicted&date_time=1,2021-06-02T14:58&polygons=true&id=walk%20from%20office&show_locations=true, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
