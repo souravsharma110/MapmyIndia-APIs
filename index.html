@@ -84,7 +84,7 @@
                 });
             }   // call isopolygon pre prod api
             function isopolygon_pre_prod(){
-                jsonp('https://am.mapmyindia.in/advancedmaps/v2/isopolygon?locations=28.613459424004414,76.99218750000001&costing=auto&rangeType=time&contours=17,000000&speedTypes=predicted&date_time=1,2021-06-02T14:58&polygons=true&id=walk%20from%20office&show_locations=true, function(data) {
+                jsonp('https://am.mapmyindia.in/advancedmaps/v2/isopolygon?locations=28.613459424004414,76.99218750000001&costing=auto&rangeType=time&contours=17,000000&speedTypes=predicted&date_time=1,2021-06-02T14:58&polygons=true&id=walk%20from%20office&show_locations=true&access_token=d54ef3a3-8a4f-4add-a644-89a009cbd5ad, function(data) {
                     console.log(data);
                     alert(JSON.stringify(data));
                 });
